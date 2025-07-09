@@ -13,8 +13,8 @@ dotenv.config({});
 
 const PORT = process.env.PORT || 3000;
 
-const __dirname  =path.resolve();
-// console.log(__dirname);
+const __dirname  = path.resolve();
+
 
 //middleware
 app.use(express.json());
