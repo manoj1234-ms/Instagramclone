@@ -20,18 +20,19 @@ const __dirname  = path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({extended:true}));
-const allowedOrigins = [
-  'http://localhost:8000'
-];
+// const allowedOrigins = [
+//   'http://localhost:8000'
+// ];
 
 const corsOptions = {
-  origin: function(origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  // origin: function(origin, callback) {
+  //   if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+  //     callback(null, true);
+  //   } else {
+  //     callback(new Error('Not allowed by CORS'));
+  //   }
+  // },
+  origin: process.env.URL,
   credentials: true
 };
 app.use(cors(corsOptions));
